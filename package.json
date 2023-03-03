@@ -1,0 +1,25 @@
+{
+  "name": "cypress-js",
+  "version": "1.0.0",
+  "description": "This is an exercises for my cypress",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "cypress": "^12.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "cypress:run": "cypress run --browser chrome --config specPattern=./cypress/e2e/tests --headed",
+    "cypress:open": "cypress open --browser chrome --config specPattern=./cypress/e2e/tests --headed "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elycisjasa123/cypress-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elycisjasa123/cypress-js/issues"
+  },
+  "homepage": "https://github.com/elycisjasa123/cypress-js#readme"
+}

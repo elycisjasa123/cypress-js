@@ -1,0 +1,11 @@
+{
+  "falseCredentials": {
+    "username": "IncorrectUser",
+    "password": "IncorrectPassword"
+  },
+  "loginSuccessMessage": "Logged In Successfully",
+  "urlSuccess": "logged-in-successfully",
+  "errorMessageUsername": "Your username is invalid!",
+  "errorMessagePassword": "Your password is invalid!",
+  "successfullyDone": "Test case successfully done..."
+}

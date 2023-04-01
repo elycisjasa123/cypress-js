@@ -19,7 +19,10 @@ jobs:
         run: npm install
       - name: Run cypress test...
         env:
-          BASE_URL: ${{ secrets.CYPRESS_BASE_URL }}
-          USERNAME: ${{ secrets.CYPRESS_USERNAME }}
-          PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
-        run: npm run cypress:run:ci
+          CYPRESS_BASE_URL: ${{ secrets.CYPRESS_BASE_URL }}
+          CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+          CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+        run: |
+          echo "BASE_URL=${CYPRESS_BASE_URL}"
+          echo "USERNAME=${CYPRESS_USERNAME}"
+          echo "PASSWORD=${CYPRESS_PASSWORD}"

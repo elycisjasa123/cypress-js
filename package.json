@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "cypress:run": "cypress run --browser chrome --config specPattern=./cypress/e2e/tests --headed",
-    "cypress:run:ci": "cypress run --browser chrome --config videoRecording=false --config specPattern=./cypress/e2e/tests/",
+    "cypress:run:ci": "cypress run --env BASE_URL=${{ env.BASE_URL }},USERNAME=${{env.USERNAME}},PASSWORD=${{env.PASSWORD}} --browser chrome --config videoRecording=false --config specPattern=./cypress/e2e/tests/",
     "cypress:open": "cypress open --browser chrome --config specPattern=./cypress/e2e/tests --headed "
   },
   "repository": {

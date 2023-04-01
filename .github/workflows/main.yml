@@ -20,8 +20,8 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
+          env:
+            CYPRESS_BASE_URL: ${{ CYPRESS_BASE_URL }}
+            CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+            CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
           start: npm run cypress:run:ci
-        env:
-          CYPRESS_BASE_URL: ${{ CYPRESS_BASE_URL }}
-          CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
-          CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}

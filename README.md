@@ -36,3 +36,4 @@ Cypress enables you to write all types of tests:
 - run `npm install` to install all the cypress dependencies
 - `npm run cypress:run` for running the tests specs directly
 - `npm run cypress:open` for opening the cypress dashboard panel
+- `npm run cypress:run:ci` for running the tests specs directly

@@ -21,3 +21,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           start: npm run cypress:run:ci
+        env:
+          BASE_URL: ${{ variables.CYPRESS_BASE_URL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}

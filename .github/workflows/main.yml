@@ -18,8 +18,6 @@ jobs:
       - name: Install the dependencies...
         run: npm install
       - name: Cypress run...
-        env:
-          CYPRESS_BASE_URL: ${{ vars.CYPRESS_BASE_URL }}
-          CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
-          CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+        with:
+          environment: Cypress_Environment
         run: npm run cypress:run:ci

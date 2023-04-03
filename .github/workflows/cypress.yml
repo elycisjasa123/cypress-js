@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install the dependencies...
         run: npm install
       - name: Setup environment variables...
@@ -19,4 +19,6 @@ jobs:
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
         run: echo "This is my base url ${{ vars.CYPRESS_BASE_URL }}"
       - name: Run cypress test ci...
-        run: npm run cypress:run:ci
+        uses: cypress-io/github-action@v5.1.0
+        with:
+          start: npm run cypress:run:ci

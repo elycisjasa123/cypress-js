@@ -2,19 +2,19 @@ name: Cypress tests
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 5 * * 1-5' # run every weekdays 5am
+    - cron: "0 5 * * 1-5" # run every weekdays 5am
 
 jobs:
   cypress_run_ci:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Install the dependencies...
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install the dependencies...
         run: npm install
-    - name: Run cypress test...
-      env:
-        BASE_URL: ${{ secrets.BASE_URL }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PASSWORD: ${{ secrets.PASSWORD }}
-      run: npm run cypress:run:ci
+      - name: Run cypress test...
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: npm run cypress:run:ci

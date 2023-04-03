@@ -6,34 +6,34 @@ import {
   errorMessageUsername,
   errorMessagePassword,
   successfullyDone,
-} from '../../fixtures/loginData.json';
+} from "../../fixtures/loginData.json";
 
 const { username, password } = falseCredentials;
 
-context('Login Practice Automation', () => {
+context("Login Practice Automation", () => {
   beforeEach(() => {
     cy.viewport(1440, 720);
-    cy.visit(Cypress.env('BASE_URL'));
+    cy.visit(Cypress.env("BASE_URL"));
   });
 
   afterEach(() => {
     cy.log(successfullyDone);
   });
 
-  it('Positive LogIn test', () => {
+  it("Positive LogIn test", () => {
     // Login user
-    cy.loginCredentials(Cypress.env('USERNAME'), Cypress.env('PASSWORD'));
+    cy.loginCredentials(Cypress.env("USERNAME"), Cypress.env("PASSWORD"));
     cy.assertSuccess(urlSuccess, loginSuccessMessage);
     cy.logoutUser();
   });
 
-  it('Negative username test', () => {
-    cy.loginCredentials(username, Cypress.env('PASSWORD'));
+  it("Negative username test", () => {
+    cy.loginCredentials(username, Cypress.env("PASSWORD"));
     cy.snackbarMessage(errorMessageUsername);
   });
 
-  it('Negative password test', () => {
-    cy.loginCredentials(Cypress.env('USERNAME'), password);
+  it("Negative password test", () => {
+    cy.loginCredentials(Cypress.env("USERNAME"), password);
     cy.snackbarMessage(errorMessagePassword);
   });
 });

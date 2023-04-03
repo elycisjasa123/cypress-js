@@ -14,9 +14,9 @@ jobs:
         run: npm install
       - name: Setup environment variables...
         env:
-          BASE_URL: ${{ vars.BASE_URL }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-        run: echo "This is my base url ${{ vars.BASE_URL }}"
+          CYPRESS_BASE_URL: ${{ vars.CYPRESS_BASE_URL }}
+          CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+          CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+        run: echo "This is my base url ${{ vars.CYPRESS_BASE_URL }}"
       - name: Run cypress test ci...
         run: npm run cypress:run:ci

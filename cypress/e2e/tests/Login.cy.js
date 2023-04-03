@@ -13,7 +13,7 @@ const { username, password } = falseCredentials;
 context("Login Practice Automation", () => {
   beforeEach(() => {
     cy.viewport(1440, 720);
-    cy.visit(Cypress.env("BASE_URL"));
+    cy.visit(`${Cypress.env("BASE_URL")}`);
   });
 
   afterEach(() => {

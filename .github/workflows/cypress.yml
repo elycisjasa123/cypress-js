@@ -14,11 +14,14 @@ jobs:
         run: npm install
       - name: Setup environment variables...
         env:
-          CYPRESS_BASE_URL: ${{ vars.CYPRESS_BASE_URL }}
-          CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
-          CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
-        run: echo "This is my base url ${{ vars.CYPRESS_BASE_URL }}"
+          BASE_URL: ${{ vars.CYPRESS_BASE_URL }}
+          USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+          PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+        run: |
+        echo "This is my base url ${{ BASE_URL }}"
+        echo "This is my username ${{ USERNAME }}"
+        echo "This is my password ${{ PASSWORD }}"
       - name: Run cypress test ci...
-        uses: cypress-io/github-action@v5.1.0
+        uses: cypress-io/github-action@v5
         with:
           start: npm run cypress:run:ci

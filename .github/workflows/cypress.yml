@@ -17,10 +17,12 @@ jobs:
           BASE_URL: ${{ vars.CYPRESS_BASE_URL }}
           USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
-        run: |
-        echo "This is my base url ${{ BASE_URL }}"
-        echo "This is my username ${{ USERNAME }}"
-        echo "This is my password ${{ PASSWORD }}"
+      - name: Print base url
+        run: echo "This is my base url ${{ BASE_URL }}
+      - name: Print username
+        run: echo "This is my username ${{ USERNAME }}
+      - name: Print password
+        run: echo "This is my password ${{ PASSWORD }}
       - name: Run cypress test ci...
         uses: cypress-io/github-action@v5
         with:

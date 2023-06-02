@@ -6,8 +6,10 @@ import {
   errorMessageUsername,
   errorMessagePassword,
   successfullyDone,
+  ENVIRONMENT
 } from "../../fixtures/loginData.json";
 
+const { USERNAME, PASSWORD } = ENVIRONMENT;
 const { username, password } = falseCredentials;
 
 context("Login Practice Automation", () => {
@@ -22,18 +24,18 @@ context("Login Practice Automation", () => {
 
   it("Positive LogIn test", () => {
     // Login user
-    cy.loginCredentials(Cypress.env("USERNAME"), Cypress.env("PASSWORD"));
+    cy.loginCredentials(USERNAME, PASSWORD);
     cy.assertSuccess(urlSuccess, loginSuccessMessage);
     cy.logoutUser();
   });
 
   it("Negative username test", () => {
-    cy.loginCredentials(username, Cypress.env("PASSWORD"));
+    cy.loginCredentials(username, PASSWORD);
     cy.snackbarMessage(errorMessageUsername);
   });
 
   it("Negative password test", () => {
-    cy.loginCredentials(Cypress.env("USERNAME"), password);
+    cy.loginCredentials(USERNAME, password);
     cy.snackbarMessage(errorMessagePassword);
   });
 });

@@ -9,13 +9,13 @@ import {
   ENVIRONMENT
 } from "../../fixtures/loginData.json";
 
-const { USERNAME, PASSWORD } = ENVIRONMENT;
+const { USERNAME, PASSWORD, BASE_URL } = ENVIRONMENT;
 const { username, password } = falseCredentials;
 
 context("Login Practice Automation", () => {
   beforeEach(() => {
     cy.viewport(1440, 720);
-    cy.visit(`${Cypress.env("BASE_URL")}`);
+    cy.visit(`${BASE_URL}`);
   });
 
   afterEach(() => {
